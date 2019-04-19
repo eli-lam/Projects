@@ -1,13 +1,33 @@
+/**
+ * Collatz Conjecture - Start with a number n > 1. Find the number of steps it takes to reach one(1) 
+ * using the following process: If n is even, divide it by 2. If n is odd, multiply it by 3 and add 1.
+ */
+
 #include <iostream>
 using namespace std;
+ 
+int main()
+{
+    int count{0};
+    cout << "Enter a number bigger than 1: "; 
+    int x{ }; 
+    cin >> x;
+    
+    while (x != 1) 
+    {
+        if (x % 2 == 0) 
+        {
+            x = x/2;
+            count++;
+        }
 
-int main(){   
-    int number = 1;
-    int counter = 0;
-
-    cout << "Please enter a number: ";
-    cin >> number;
-
-    for(counter; number != 0; counter++)
-        if 
+        else
+        {
+            x = x*3+1;
+            count++;
+        }
+    }
+    
+    printf ("It took %d steps to reach one.", count);
+    return 0;
 }
